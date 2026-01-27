@@ -1,5 +1,6 @@
 {% set name = "wxutils" %}
-{% set version = "0.3.3" %}
+{% set version = "0.3.6" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 03fba8348bf7f3a565c66d92bcbf54bdeab2f606947f0461b184ec45a0bb7c5d
+  sha256: d365e7c95feb0327ea65339ec4ff90d1502f4ea8cc8e9350c87fc6598f2b4af5
 
 build:
   noarch: python
@@ -16,11 +17,15 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >={{ python_min }}
     - pip
+    - setuptools >=45
+    - wheel
+    - setuptools_scm >=6.2
   run:
-    - python >=3.6
-    - wxpython
+    - python >={{ python_min }}
+    - darkdetect
+    - wxpython >=4.2.2
 
 test:
   imports:
@@ -28,7 +33,7 @@ test:
 
 about:
   home: https://github.com/newville/wxutils
-  license: BSD
+  license: MITz
   license_file: LICENSE
   summary: Utilities and convenience classes and functions for wxPython
 
@@ -36,4 +41,6 @@ extra:
   recipe-maintainers:
     - mrakitin
     - kbeeperez
+    - newville
+    - maurov
     - conda-forge/event-model
