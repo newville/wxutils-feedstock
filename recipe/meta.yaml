@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: d365e7c95feb0327ea65339ec4ff90d1502f4ea8cc8e9350c87fc6598f2b4af5
 
 build:
@@ -33,7 +33,7 @@ test:
 
 about:
   home: https://github.com/newville/wxutils
-  license: MITz
+  license: MIT
   license_file: LICENSE
   summary: Utilities and convenience classes and functions for wxPython
 
