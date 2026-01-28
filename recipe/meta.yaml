@@ -13,7 +13,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -25,6 +25,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - darkdetect
+    - pyshortcuts >= 1.9.6
     - wxpython >=4.2.2
 
 test:
