@@ -25,10 +25,13 @@ requirements:
   run:
     - python >={{ python_min }}
     - darkdetect
-    - pyshortcuts >= 1.9.6
+    - pyshortcuts >=1.9.6
     - wxpython >=4.2.2
 
 test:
+  requires:
+    - python {{ python_min }}
+    - pip
   imports:
     - wxutils
 
